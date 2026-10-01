@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* ---------- FIRST SCREEN ---------- */
+
+        .start-page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+        }
+
+        .start-content {
+            text-align: center;
+        }
+
+        .start-content h1 {
+            color: white;
+            font-size: 45px;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .birthday-btn {
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff4f81;
+            background: white;
+            cursor: pointer;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+            animation: pulse 1.5s infinite;
+        }
+
+        .birthday-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* ---------- BIRTHDAY PAGE ---------- */
+
+        .birthday-page {
+            display: none;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+
+            background: linear-gradient(
+                135deg,
+                #ff9a9e,
+                #fad0c4,
+                #fbc2eb,
+                #a6c1ee
+            );
+
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .birthday-content {
+            position: relative;
+            z-index: 10;
+            padding: 30px;
+        }
+
+        .birthday-content h1 {
+            font-size: 65px;
+            color: white;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.25);
+
+            animation: pop 1s ease;
+        }
+
+        .birthday-content h2 {
+            font-size: 38px;
+            color: #fff;
+            margin-top: 15px;
+
+            animation: pop 1.5s ease;
+        }
+
+        .birthday-content p {
+            color: white;
+            font-size: 22px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .cake {
+            font-size: 100px;
+            margin-top: 25px;
+
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+
+        /* ---------- BALLOONS ---------- */
+
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 75px;
+            border-radius: 50%;
+            bottom: -100px;
+            animation: fly 8s linear infinite;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: white;
+            top: 70px;
+            left: 50%;
+        }
+
+        .balloon1 {
+            left: 10%;
+            background: #ff4d6d;
+            animation-delay: 0s;
+        }
+
+        .balloon2 {
+            left: 30%;
+            background: #4dabf7;
+            animation-delay: 2s;
+        }
+
+        .balloon3 {
+            left: 50%;
+            background: #ffd43b;
+            animation-delay: 1s;
+        }
+
+        .balloon4 {
+            left: 70%;
+            background: #845ef7;
+            animation-delay: 3s;
+        }
+
+        .balloon5 {
+            left: 90%;
+            background: #51cf66;
+            animation-delay: 4s;
+        }
+
+        @keyframes fly {
+            0% {
+                bottom: -120px;
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(8deg);
+            }
+
+            100% {
+                bottom: 110%;
+                transform: rotate(-8deg);
+            }
+        }
+
+
+        /* ---------- CONFETTI ---------- */
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background: white;
+            top: -30px;
+            animation: fall 5s linear infinite;
+        }
+
+        .c1 {
+            left: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .c2 {
+            left: 35%;
+            animation-delay: 1.5s;
+        }
+
+        .c3 {
+            left: 55%;
+            animation-delay: 2s;
+        }
+
+        .c4 {
+            left: 75%;
+            animation-delay: 0.8s;
+        }
+
+        .c5 {
+            left: 90%;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -30px;
+                transform: rotate(0deg);
+            }
+
+            100% {
+                top: 110%;
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+
+            .start-content h1 {
+                font-size: 32px;
+            }
+
+            .birthday-content h1 {
+                font-size: 42px;
+            }
+
+            .birthday-content h2 {
+                font-size: 28px;
+            }
+
+            .birthday-content p {
+                font-size: 18px;
+            }
+
+            .cake {
+                font-size: 75px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- FIRST PAGE -->
+
+    <section class="start-page" id="startPage">
+
+        <div class="start-content">
+
+            <h1>🎉 A Special Surprise 🎉</h1>
+
+            <button class="birthday-btn" onclick="openBirthday()">
+                🎁 Open Birthday Surprise
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BIRTHDAY PAGE -->
+
+    <section class="birthday-page" id="birthdayPage">
+
+        <!-- Balloons -->
+
+        <div class="balloon balloon1"></div>
+        <div class="balloon balloon2"></div>
+        <div class="balloon balloon3"></div>
+        <div class="balloon balloon4"></div>
+        <div class="balloon balloon5"></div>
+
+
+        <!-- Confetti -->
+
+        <div class="confetti c1"></div>
+        <div class="confetti c2"></div>
+        <div class="confetti c3"></div>
+        <div class="confetti c4"></div>
+        <div class="confetti c5"></div>
+
+
+        <!-- Birthday Content -->
+
+        <div class="birthday-content">
+
+            <h1>🎉 Happy Birthday! 🎉</h1>
+
+            <h2>🥳 Wishing You A Wonderful Day! 🥳</h2>
+
+            <p>
+                May your birthday be filled with
+                happiness, smiles and beautiful memories. ❤️
+            </p>
+
+            <div class="cake">
+                🎂
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script>
+
+        function openBirthday() {
+
+            // Hide first page
+            document.getElementById("startPage").style.display = "none";
+
+            // Show birthday page
+            document.getElementById("birthdayPage").style.display = "flex";
+
+        }
+
+    </script>
+
+</body>
+</html>
+</body>
+</html>
